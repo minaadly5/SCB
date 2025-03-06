@@ -1,0 +1,131 @@
+Project structure
+
+Environment setup: 
+Java version: 23 release 17-09-2024
+selenium java version: 4.28.1 
+test NJ: 7.10.2 
+Mavin complier: version 3.8.1 release 22 
+
+We used compatible version Java with selenium 
+
+project step using POM design pattern:
+- Data Class (including all data used)  --> file name ProjectData.Java
+- page Elements  (locators & methods) --> package name pageobject 
+- procedures (action & logic) --> package name procedures 
+-Test (TestCase) --> package name Test 
+
+why using POM on our projects? 
+* Centralized Configuration
+* Standardized Project Structure
+* Reusability
+* Scalability
+
+Data Class configurations:
+       Using Private Variables:
+* Control Over Data Access
+* Encapsulation
+       Using Getters and Setters:
+* Controlled Access
+* Flexibility
+
+
+Page Elements configurations
+* Lectors using XPath (web elements lectors)
+* Methods
+Notes:
+Why using XPath 
+* Flexibility in Locating Elements
+* Handling Dynamic Elements
+
+Procedures 
+* Including the logic to execute Test case 
+* Including assertions
+
+ Test
+* Including test annotation 
+o @BeforeTest: Runs before each Test Case.
+o @Test: Marks a method as a Test Case.
+o @AfterTest: Runs after each Test Case.
+
+
+Script covered:
+- Register
+- Login 
+- Transfer fund
+- Request loan
+- Logout
+
+Register Script steps: 
+- Initialization web driver 
+- Get URL “ParaBank | Welcome | Online Banking”
+- Maximize screen  
+- Click register burton 
+- Enter All Data using Data Class 
+- Using thread sleep 
+- Assertion for success message display on screen “your account created successfully”  
+- Log out 
+Login script steps:
+- Initialization web driver 
+- Get URL “ParaBank | Welcome | Online Banking”
+- Maximize screen  
+- Enter User using sendkey function 
+- Enter Password using sendkey function 
+- Click login button 
+- Assertion for logout button display in screen 
+Transfer fund script steps 
+- Initialization web driver 
+- Get URL “ParaBank | Welcome | Online Banking”
+- Maximize screen  
+- Enter User using sendkey function 
+- Enter Password using sendkey function 
+- Click login button 
+- Assertion for logout button display in screen 
+- Click fund transfer button 
+- Enter Amount 
+- Choose from account DDL 
+- Using explicit wait 
+- Choose to account from DDL
+- Click transfer button 
+- Assertion for success message display on screen “transfer complete”  
+
+Request loan script steps:
+- Initialization web driver 
+- Get URL “ParaBank | Welcome | Online Banking”
+- Maximize screen  
+- Enter User using sendkey function 
+- Enter Password using sendkey function 
+- Click login button 
+- Assertion for logout button display in screen 
+- Click request loan button 
+- Enter loan amount 
+- Choose from Account DDL 
+- Click apply 
+- Assertion for “loan status is approved”
+
+Logout script steps:
+- Initialization web driver 
+- Get URL “ParaBank | Welcome | Online Banking”
+- Maximize screen  
+- Enter User using sendkey function 
+- Enter Password using sendkey function 
+- Click login button 
+- Assertion for logout button display in screen 
+- Click logout button 
+- Assertion for login button display 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
